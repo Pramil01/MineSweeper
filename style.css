@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Bubblegum Sans", cursive;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+body {
+  background-color: #e3fcbf;
+  overflow-x: hidden;
+}
+header {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00ffab;
+  color: aliceblue;
+  font-size: large;
+}
+.bean {
+  position: absolute;
+  pointer-events: none;
+  width: 650px;
+  height: 500px;
+  left: 0px;
+  top: 20vh;
+}
+.bob {
+  position: absolute;
+  pointer-events: none;
+  width: 650px;
+  height: 500px;
+  right: -200px;
+  top: 20vh;
+}
+.info {
+  color: gray;
+  font-size: large;
+  height: 1vh;
+}
+.container {
+  height: 89vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid {
+  margin: 0 auto;
+  width: fit-content;
+  height: 550px;
+  width: 550px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30px);
+  grid-template-rows: repeat(auto-fill, 30px);
+}
+.cell {
+  border: 1px solid greenyellow;
+  width: 28px;
+  height: 28px;
+  background-color: greenyellow;
+  color: greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cell:hover {
+  cursor: pointer;
+}
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.btn {
+  padding: 5px 10px;
+  margin: 0 20px;
+}
+.clock {
+  margin: 0 20px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.btn::after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.btn:hover::after {
+  top: 0px;
+  left: 0px;
+}
+
+@media screen and (max-width: 1500px) {
+  .bean {
+    display: none;
+  }
+  .bob {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid {
+    height: 456px;
+    width: 420px;
+    grid-template-rows: repeat(auto-fill, 25px);
+    grid-template-columns: repeat(auto-fill, 23px);
+  }
+  .cell {
+    height: 23px;
+    width: 21px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .grid {
+    height: 350px;
+    width: 350px;
+    grid-template-rows: repeat(auto-fill, 19px);
+    grid-template-columns: repeat(auto-fill, 19px);
+  }
+  .cell {
+    height: 17px;
+    width: 17px;
+  }
+}
